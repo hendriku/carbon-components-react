@@ -83,7 +83,7 @@ export default class RadioTile extends React.Component {
   };
 
   render() {
-    const { children, className, iconDescription, ...other } = this.props;
+    const { children, className, iconDescription, style, ...other } = this.props;
     const classes = classNames(
       className,
       `${prefix}--tile`,
@@ -107,6 +107,7 @@ export default class RadioTile extends React.Component {
           className={classes}
           tabIndex={this.props.tabIndex}
           onKeyDown={this.handleKeyDown}>
+          style={style}
           <div className={`${prefix}--tile__checkmark`}>
             <CheckmarkFilled aria-label={iconDescription}>
               {iconDescription && <title>{iconDescription}</title>}
